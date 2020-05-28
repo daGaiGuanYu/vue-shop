@@ -1,0 +1,11 @@
+@import './inheritance'
+
+html, body
+  padding: 0
+  margin: 0
+
+div
+  box-sizing: border-box
+html
+  fontColor()
+  fontSize()

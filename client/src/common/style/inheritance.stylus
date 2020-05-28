@@ -1,0 +1,53 @@
+$colorFont = #333333
+$colorFontWhite = #fff
+
+$fontSize = 14px
+$fontSizeBig = 16px
+$fontSizeLG = 20px
+$fontSizeSM = 12px
+
+$border = 1px solid #aaa
+
+// 混入时，慎用 font-size: lg 这种格式，因为时间长了容易引起迷惑
+fontSize()
+  if arguments == lg
+    font-size: $fontSizeLG
+  else if arguments == big
+    font-size: $fontSizeBig
+  else if arguments == sm 
+    font-size: $fontSizeSM
+  else
+    font-size: $fontSize
+
+fontColor()
+  if arguments == white
+    color: $colorFontWhite
+  else
+    color: $colorFont
+
+clickable()
+  cursor: pointer
+  &:hover
+    opacity: 0.9
+  &:active
+    opacity: 0.8
+
+flexBox()
+  display: flex
+  align-items: center
+  if arguments[0] == space-between
+    justify-content: space-between
+  else if arguments[0] == center
+    justify-content: center
+  
+  if arguments[1]
+    flex-direction: column
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+fadeIn()
+  animation: fade-in 0.3s
+  
